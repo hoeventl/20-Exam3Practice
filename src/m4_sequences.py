@@ -135,14 +135,18 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
-
+    indices = []
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[k + 1]:
+            indices = indices + [k]
+    return indices
 
 def run_test_practice_problem4b():
     """ Tests the    practice_problem4b    function. """
