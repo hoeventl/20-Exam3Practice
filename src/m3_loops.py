@@ -37,6 +37,7 @@ def main():
     """ Calls the   TEST   functions in this module. """
     run_test_practice_problem3()
 
+
 # -----------------------------------------------------------------------------
 # Students: Some of the testing code below uses SimpleTestCase objects,
 #           from the imported   simple_testing (st)   module.
@@ -46,7 +47,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ###########################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -135,6 +136,15 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ###########################################################################
+    expected = [6, 7, 8]
+    actual = practice_problem3(4, 3, 0.1)
+    print('Expected value:', expected)
+    print('Actual value:', actual)
+
+    expected = [0, 1, 2, 6, 7, 8, 12, 13, 14, 19]
+    actual = practice_problem3(-3, 10, 0)
+    print('Expected value:', expected)
+    print('Actual value:', actual)
 
 
 def practice_problem3(start, n, threshold):
@@ -209,7 +219,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ###########################################################################
@@ -217,6 +227,16 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
+    x = start
+    count = []
+    while True:
+        if len(count) != n:
+            if math.cos(x) + math.sin(x) > threshold:
+                count = count + [x]
+        elif len(count) == n:
+            break
+        x = x + 1
+    return count
 
 
 # -----------------------------------------------------------------------------
